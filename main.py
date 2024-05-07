@@ -1,4 +1,12 @@
+"""
+auto created files
+"""
+
+
 def main():
+    """
+    print hello
+    """
     print("Hello world!")
 
 
