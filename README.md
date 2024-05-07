@@ -1,3 +1,2 @@
-# Test_training1
-# Hello 
-# Hello from my second branch
+# pymar2024
+Python test automation course
