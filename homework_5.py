@@ -1,4 +1,4 @@
-"""Homework#5^; Python data types: using basic string methods."""
+"""Homework#5; Python data types: using basic string methods."""
 
 # Заменить символ “#” на символ “/” в строке 'www.my_site.com#about'
 STR_TO_UPDATE = 'www.my_site.com#about'
