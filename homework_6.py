@@ -28,10 +28,10 @@ print(general_names_in_list)
 # Напечатайте текст: “Привет, Ivan Ivanou!
 # Добро пожаловать в Minsk Belarus”
 fullname_in_list = ["Ivan", "Ivanou"]
-city_in_str = "Minsk"
-country_in_str = "Belarus"
-print("Привет,", ' '.join(fullname_in_list) + "!", "Добро пожаловать в", city_in_str,
-      country_in_str)
+CITY_IN_STR = "Minsk"
+COUNTRY_IN_STR = "Belarus"
+print("Привет,", ' '.join(fullname_in_list) + "!", "Добро пожаловать в",
+      CITY_IN_STR, COUNTRY_IN_STR)
 
 # Дан список ["I", "love", "arrays", "they", "are", "my", "favorite"]
 # сделайте из него строку => "I love arrays they are my favorite"
@@ -41,7 +41,8 @@ print(STR_OF_WORDS)
 
 # Создайте список из 10 элементов, вставьте на 3-ю позицию новое значение,
 # удалите элемент из списка под индексом 6
-list_of_ten_positions = ["one", 2, 0.5, {"a": "b"}, "python", [3, 6], 3, "THE BEST", 8, 9, "5g"]
+list_of_ten_positions = ["one", 2, 0.5, {"a": "b"}, "python", [3, 6], 3,
+                         "THE BEST", 8, 9, "5g"]
 print("Длина:", len(list_of_ten_positions))
 list_of_ten_positions.insert(3, "Awesome_python")
 print(list_of_ten_positions)
