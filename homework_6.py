@@ -1,28 +1,28 @@
-# """Homework#6; Python data types: creating lists and using basic methods."""
+"""Homework#6; Python data types: creating lists and using basic methods."""
 
 # Перевести строку в список "Robin Singh" => ["Robin”, “Singh"]
-my_first_string = "Robin Singh"
-creating_first_list = my_first_string.split()
+MY_FIRST_STR = "Robin Singh"
+creating_first_list = MY_FIRST_STR.split()
 print(creating_first_list)
 
-#"I love arrays they are my favorite" =>
+# "I love arrays they are my favorite" =>
 # ["I", "love", "arrays", "they", "are", "my", "favorite"]
-long_string = "I love arrays they are my favorite"
-creating_long_list = long_string.split()
+LONG_STRING = "I love arrays they are my favorite"
+creating_long_list = LONG_STRING.split()
 print(creating_long_list)
 
 # Дан список: [Ivan, Ivanou], и 2 строки: Minsk, Belarus
 first_list = ["Ivan", "Ivanou"]
-string_one = "Minsk"
-string_two = "Belarus"
-final_list = first_list + [string_one, string_two]
+STRING_ONE = "Minsk"
+STRING_TWO = "Belarus"
+final_list = first_list + [STRING_ONE, STRING_TWO]
 print(final_list)
 
 fullname_in_list = ["Ivan", "Ivanou"]
-city_in_str = "Minsk"
-country_in_str = "Belarus"
+CITY_IN_STR = "Minsk"
+COUNTRY_IN_STR = "Belarus"
 general_names_in_list = []
-general_names_in_list.extend(fullname_in_list + [city_in_str, country_in_str])
+general_names_in_list.extend(fullname_in_list + [CITY_IN_STR, COUNTRY_IN_STR])
 print(general_names_in_list)
 
 # Напечатайте текст: “Привет, Ivan Ivanou!
@@ -30,17 +30,18 @@ print(general_names_in_list)
 fullname_in_list = ["Ivan", "Ivanou"]
 city_in_str = "Minsk"
 country_in_str = "Belarus"
-print("Привет,", ' '.join(fullname_in_list) + "!", "Добро пожаловать в", city_in_str, country_in_str)
+print("Привет,", ' '.join(fullname_in_list) + "!", "Добро пожаловать в", city_in_str,
+      country_in_str)
 
 # Дан список ["I", "love", "arrays", "they", "are", "my", "favorite"]
 # сделайте из него строку => "I love arrays they are my favorite"
 list_of_words = ["I", "love", "arrays", "they", "are", "my", "favorite"]
-str_of_words = ' '.join (list_of_words)
-print(str_of_words)
+STR_OF_WORDS = ' '.join(list_of_words)
+print(STR_OF_WORDS)
 
 # Создайте список из 10 элементов, вставьте на 3-ю позицию новое значение,
 # удалите элемент из списка под индексом 6
-list_of_ten_positions = ["one", 2, 0.5, {"a": "b"}, "python", [3,6], 3, "THE BEST", 8, 9, "5g"]
+list_of_ten_positions = ["one", 2, 0.5, {"a": "b"}, "python", [3, 6], 3, "THE BEST", 8, 9, "5g"]
 print("Длина:", len(list_of_ten_positions))
 list_of_ten_positions.insert(3, "Awesome_python")
 print(list_of_ten_positions)
