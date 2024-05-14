@@ -16,7 +16,8 @@ print(split_long_string)
 fullname_in_list = ['Ivan', 'Ivanou']
 CITY = 'Minsk'
 COUNTRY = 'Belarus'
-print(f'Привет, {" ".join(fullname_in_list)}! Добро пожаловать в {CITY} {COUNTRY}')
+print(f'Привет, {" ".join(fullname_in_list)}! Добро пожаловать'
+      f' в {CITY} {COUNTRY}')
 
 # Дан список ['I', 'love', 'arrays', 'they', 'are', 'my', 'favorite']
 # сделайте из него строку => 'I love arrays they are my favorite'
