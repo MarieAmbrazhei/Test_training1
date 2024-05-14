@@ -1,37 +1,22 @@
-'''Homework#6; Python data types: creating lists and using basic methods.'''
+"""Homework#6; Python data types: creating lists and using basic methods."""
 
 # Перевести строку в список 'Robin Singh' => ['Robin”, “Singh']
-MY_FIRST_STR = 'Robin Singh'
-creating_first_list = MY_FIRST_STR.split()
-print(creating_first_list)
+NAME = 'Robin Singh'
+split_name = NAME.split()
+print(split_name)
 
 # 'I love arrays they are my favorite' =>
 # ['I', 'love', 'arrays', 'they', 'are', 'my', 'favorite']
 LONG_STRING = 'I love arrays they are my favorite'
-creating_long_list = LONG_STRING.split()
-print(creating_long_list)
+split_long_string = LONG_STRING.split()
+print(split_long_string)
 
 # Дан список: [Ivan, Ivanou], и 2 строки: Minsk, Belarus
-first_list = ['Ivan', 'Ivanou']
-STRING_ONE = 'Minsk'
-STRING_TWO = 'Belarus'
-final_list = first_list + [STRING_ONE, STRING_TWO]
-print(final_list)
-
-fullname_in_list = ['Ivan', 'Ivanou']
-CITY_STR = 'Minsk'
-COUNTRY_STR = 'Belarus'
-general_names_in_list = []
-general_names_in_list.extend(fullname_in_list + [CITY_STR, COUNTRY_STR])
-print(general_names_in_list)
-
-# Напечатайте текст: “Привет, Ivan Ivanou!
-# Добро пожаловать в Minsk Belarus”
+# Напечатайте текст: “Привет, Ivan Ivanou! Добро пожаловать в Minsk Belarus”
 fullname_in_list = ['Ivan', 'Ivanou']
 CITY = 'Minsk'
 COUNTRY = 'Belarus'
-print('Привет,', ' '.join(fullname_in_list) + '!',
-      f'Добро пожаловать в {CITY} {COUNTRY}')
+print(f'Привет, {" ".join(fullname_in_list)}! Добро пожаловать в {CITY} {COUNTRY}')
 
 # Дан список ['I', 'love', 'arrays', 'they', 'are', 'my', 'favorite']
 # сделайте из него строку => 'I love arrays they are my favorite'
@@ -45,10 +30,8 @@ given_list = ['one', 2, 0.5, {'a': 'b'}, 'python', [3, 6], 3,
               'THE BEST', 8, '5g']
 print(f'Initial length is: {len(given_list)}')
 given_list.insert(3, 'Awesome_python')
-print('updated list after inserting "Awesome_python":',
-      given_list, 'with length:',
-      len(given_list))
+print(f'updated list after inserting "Awesome_python": '
+      f'{given_list} with length: {len(given_list)}')
 del given_list[6]
-print('updated list after deleting element at index 6:',
-      given_list, 'with length:',
-      len(given_list))
+print(f'updated list after deleting element at index 6: '
+      f'{given_list} with length: {len(given_list)}')
