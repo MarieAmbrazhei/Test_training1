@@ -31,7 +31,7 @@ fullname_in_list = ['Ivan', 'Ivanou']
 CITY = 'Minsk'
 COUNTRY = 'Belarus'
 print('Привет,', ' '.join(fullname_in_list) + '!',
-      'Добро пожаловать в {city} {country}'.format(city=CITY, country=COUNTRY))
+      f'Добро пожаловать в {CITY} {COUNTRY}')
 
 # Дан список ['I', 'love', 'arrays', 'they', 'are', 'my', 'favorite']
 # сделайте из него строку => 'I love arrays they are my favorite'
@@ -45,8 +45,10 @@ given_list = ['one', 2, 0.5, {'a': 'b'}, 'python', [3, 6], 3,
               'THE BEST', 8, '5g']
 print(f'Initial length is: {len(given_list)}')
 given_list.insert(3, 'Awesome_python')
-print('updated list after inserting "Awesome_python":', given_list, 'with length:',
+print('updated list after inserting "Awesome_python":',
+      given_list, 'with length:',
       len(given_list))
 del given_list[6]
-print('updated list after deleting element at index 6:', given_list, 'with length:',
+print('updated list after deleting element at index 6:',
+      given_list, 'with length:',
       len(given_list))
