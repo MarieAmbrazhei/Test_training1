@@ -37,12 +37,14 @@ def play_bulls_and_cows():
             if random_number[elements] == hidden_four_digit_num[elements]:
                 bulls += 1
             elif hidden_four_digit_num[elements] in random_number:
-                 cows += 1
+                cows += 1
         print(hidden_four_digit_num + ' contain ' + str(bulls) + ' bull and ' +
-                str(cows) + ' cows')
+              str(cows) + ' cows')
         if bulls == 4:
             print('You won in ', attempt, 'steps')
             break
+
+
 play_bulls_and_cows()
 
 
@@ -85,18 +87,18 @@ def count_missed_statues(statues_list):
     Count missing statues in a sequence.
     """
     if isinstance(statues_list, list):
-
         min_statue = min(statues_list)
         max_statue = max(statues_list)
 
         all_statues = list(range(min_statue, max_statue + 1))
 
         missing_statues = [statue for statue in all_statues if
-                       statue not in statues_list]
+                           statue not in statues_list]
 
         return len(missing_statues)
-    else:
-     print('Please provide list data type!')
+
+    print('Please provide list data type!')
+
 
 statues = [6, 2, 3, 8]
 print(count_missed_statues(statues))
