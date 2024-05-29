@@ -1,6 +1,7 @@
 """ Homework8: Flow Control. Loops: writing and implementing programs
 in Python """
 
+
 # Быки и коровы
 # В классическом варианте игра рассчитана на двух игроков.
 # Каждый из игроков задумывает и записывает тайное 4-значное число
@@ -15,29 +16,34 @@ in Python """
 # Ваша задача реализовать программу, против которой можно сыграть в
 # "Быки и коровы"
 
-from random import choice
+def play_bulls_and_cows():
+    """
+    Implement a program against which you can play "Bulls and Cows" 
+    """
 
-DIGITS = '0123456789'
-RANDOM_DIGITS = choice(DIGITS[1:10])
-for elements in range(3):
-    DIGITS = ''.join(DIGITS.split(RANDOM_DIGITS[elements]))
-    RANDOM_DIGITS += choice(DIGITS)
-N = 0
+import random
+import string
+
+digits = list(string.digits)
+random.shuffle(digits)
+random_number = ''.join(digits[:4])
+attempt = 0
 while True:
     hidden_four_digit_num = input("ENTER A FOUR-DIGIT NUMBER: ")
-    N += 1
+    attempt += 1
     BULLS = 0
     COWS = 0
     for elements in range(4):
-        if RANDOM_DIGITS[elements] == hidden_four_digit_num[elements]:
+        if random_number[elements] == hidden_four_digit_num[elements]:
             BULLS += 1
-        elif hidden_four_digit_num[elements] in RANDOM_DIGITS:
+        elif hidden_four_digit_num[elements] in random_number:
             COWS += 1
     print(hidden_four_digit_num + ' contain ' + str(BULLS) + ' bull and ' +
           str(COWS) + ' cows')
     if BULLS == 4:
-        print('You won in ', N, 'steps')
+        print('You won in ', attempt, 'steps')
         break
+play_bulls_and_cows()
 
 
 # Пирамида
@@ -52,7 +58,7 @@ while True:
 
 def generate_pyramid(levels):
     """
-    Wtite a program that generates a pyramid
+    Print a pyramid with the given number of levels
     """
     for i in range(levels):
         spaces = " " * (levels - i - 1)
@@ -74,10 +80,12 @@ generate_pyramid(10)
 # Пример Для статуй = [6, 2, 3, 8] результат должен быть = 3. Иными словами, у
 # Вас отсутствуют статуи размеров 4, 5 и 7.
 
-def count_statues(statues_list):
+def count_missed_statues(statues_list):
     """
     Count missing statues in a sequence.
     """
+    if not isinstance(statues_list, list):
+        return False
     min_statue = min(statues_list)
     max_statue = max(statues_list)
 
@@ -90,4 +98,4 @@ def count_statues(statues_list):
 
 
 statues = [6, 2, 3, 8]
-print(count_statues(statues))
+print(count_missed_statues(statues))
