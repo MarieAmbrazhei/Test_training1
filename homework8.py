@@ -1,7 +1,6 @@
 """ Homework8: Flow Control. Loops: writing and implementing programs
 in Python """
 
-
 # Быки и коровы
 # В классическом варианте игра рассчитана на двух игроков.
 # Каждый из игроков задумывает и записывает тайное 4-значное число
@@ -16,13 +15,15 @@ in Python """
 # Ваша задача реализовать программу, против которой можно сыграть в
 # "Быки и коровы"
 
-def play_bulls_and_cows():
-    """
-    Implement a program against which you can play "Bulls and Cows" 
-    """
-
 import random
 import string
+
+
+def play_bulls_and_cows():
+    """
+    Implement a program against which you can play "Bulls and Cows"
+    """
+
 
 digits = list(string.digits)
 random.shuffle(digits)
