@@ -27,22 +27,22 @@ def play_bulls_and_cows():
 
 digits = list(string.digits)
 random.shuffle(digits)
-random_number = ''.join(digits[:4])
+RANDOM_NUMBER = ''.join(digits[:4])
 attempt = 0
 while True:
     hidden_four_digit_num = input("ENTER A FOUR-DIGIT NUMBER: ")
-    attempt += 1
+    ATTEMPT += 1
     BULLS = 0
     COWS = 0
     for elements in range(4):
-        if random_number[elements] == hidden_four_digit_num[elements]:
+        if RANDOM_NUMBER[elements] == hidden_four_digit_num[elements]:
             BULLS += 1
-        elif hidden_four_digit_num[elements] in random_number:
+        elif hidden_four_digit_num[elements] in RANDOM_NUMBER:
             COWS += 1
     print(hidden_four_digit_num + ' contain ' + str(BULLS) + ' bull and ' +
           str(COWS) + ' cows')
     if BULLS == 4:
-        print('You won in ', attempt, 'steps')
+        print('You won in ', ATTEMPT, 'steps')
         break
 play_bulls_and_cows()
 
