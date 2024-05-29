@@ -20,7 +20,7 @@ from random import choice
 DIGITS = '0123456789'
 RANDOM_DIGITS = choice(DIGITS[1:10])
 for elements in range(3):
-    DIGITS = ''.join(DIGITS .split(RANDOM_DIGITS[elements]))
+    DIGITS = ''.join(DIGITS.split(RANDOM_DIGITS[elements]))
     RANDOM_DIGITS += choice(DIGITS)
 N = 0
 while True:
@@ -51,6 +51,9 @@ while True:
 # пирамиду пирамиду со значением N, равным 10
 
 def generate_pyramid(levels):
+    """
+    Wtite a program that generates a pyramid
+    """
     for i in range(levels):
         spaces = " " * (levels - i - 1)
         stars = "*" * (2 * i + 1)
@@ -71,14 +74,17 @@ generate_pyramid(10)
 # Пример Для статуй = [6, 2, 3, 8] результат должен быть = 3. Иными словами, у
 # Вас отсутствуют статуи размеров 4, 5 и 7.
 
-def count_statues(statues):
-    min_statue = min(statues)
-    max_statue = max(statues)
+def count_statues(statues_list):
+    """
+    Count missing statues in a sequence.
+    """
+    min_statue = min(statues_list)
+    max_statue = max(statues_list)
 
     all_statues = list(range(min_statue, max_statue + 1))
 
     missing_statues = [statue for statue in all_statues if
-                       statue not in statues]
+                       statue not in statues_list]
 
     return len(missing_statues)
 
