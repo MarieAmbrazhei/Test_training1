@@ -28,7 +28,7 @@ def play_bulls_and_cows():
 digits = list(string.digits)
 random.shuffle(digits)
 RANDOM_NUMBER = ''.join(digits[:4])
-attempt = 0
+ATTEMPT = 0
 while True:
     hidden_four_digit_num = input("ENTER A FOUR-DIGIT NUMBER: ")
     ATTEMPT += 1
