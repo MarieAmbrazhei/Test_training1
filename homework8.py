@@ -21,29 +21,28 @@ import string
 
 def play_bulls_and_cows():
     """
-    Implement a program against which you can play "Bulls and Cows"
+    Play game "Bulls and Cows"
     """
 
-
-digits = list(string.digits)
-random.shuffle(digits)
-RANDOM_NUMBER = ''.join(digits[:4])
-ATTEMPT = 0
-while True:
-    hidden_four_digit_num = input("ENTER A FOUR-DIGIT NUMBER: ")
-    ATTEMPT += 1
-    BULLS = 0
-    COWS = 0
-    for elements in range(4):
-        if RANDOM_NUMBER[elements] == hidden_four_digit_num[elements]:
-            BULLS += 1
-        elif hidden_four_digit_num[elements] in RANDOM_NUMBER:
-            COWS += 1
-    print(hidden_four_digit_num + ' contain ' + str(BULLS) + ' bull and ' +
-          str(COWS) + ' cows')
-    if BULLS == 4:
-        print('You won in ', ATTEMPT, 'steps')
-        break
+    digits = list(string.digits)
+    random.shuffle(digits)
+    random_number = ''.join(digits[:4])
+    attempt = 0
+    while True:
+        hidden_four_digit_num = input("ENTER A FOUR-DIGIT NUMBER: ")
+        attempt += 1
+        bulls = 0
+        cows = 0
+        for elements in range(4):
+            if random_number[elements] == hidden_four_digit_num[elements]:
+                bulls += 1
+            elif hidden_four_digit_num[elements] in random_number:
+                 cows += 1
+        print(hidden_four_digit_num + ' contain ' + str(bulls) + ' bull and ' +
+                str(cows) + ' cows')
+        if bulls == 4:
+            print('You won in ', attempt, 'steps')
+            break
 play_bulls_and_cows()
 
 
@@ -85,18 +84,19 @@ def count_missed_statues(statues_list):
     """
     Count missing statues in a sequence.
     """
-    if not isinstance(statues_list, list):
-        return False
-    min_statue = min(statues_list)
-    max_statue = max(statues_list)
+    if isinstance(statues_list, list):
 
-    all_statues = list(range(min_statue, max_statue + 1))
+        min_statue = min(statues_list)
+        max_statue = max(statues_list)
 
-    missing_statues = [statue for statue in all_statues if
+        all_statues = list(range(min_statue, max_statue + 1))
+
+        missing_statues = [statue for statue in all_statues if
                        statue not in statues_list]
 
-    return len(missing_statues)
-
+        return len(missing_statues)
+    else:
+     print('Please provide list data type!')
 
 statues = [6, 2, 3, 8]
 print(count_missed_statues(statues))
