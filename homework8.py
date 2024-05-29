@@ -1,6 +1,7 @@
 """ Homework8: Flow Control. Loops: writing and implementing programs
 in Python """
 
+
 # Быки и коровы
 # В классическом варианте игра рассчитана на двух игроков.
 # Каждый из игроков задумывает и записывает тайное 4-значное число
@@ -14,39 +15,39 @@ in Python """
 # последовательность.
 # Ваша задача реализовать программу, против которой можно сыграть в
 # "Быки и коровы"
-
-import random
-import string
-
-
-def play_bulls_and_cows():
-    """
-    Play game "Bulls and Cows"
-    """
-
-    digits = list(string.digits)
-    random.shuffle(digits)
-    random_number = ''.join(digits[:4])
-    attempt = 0
-    while True:
-        hidden_four_digit_num = input("ENTER A FOUR-DIGIT NUMBER: ")
-        attempt += 1
-        bulls = 0
-        cows = 0
-        for elements in range(4):
-            if random_number[elements] == hidden_four_digit_num[elements]:
-                bulls += 1
-            elif hidden_four_digit_num[elements] in random_number:
-                cows += 1
-        print(hidden_four_digit_num + ' contain ' + str(bulls) + ' bull and ' +
-              str(cows) + ' cows')
-        if bulls == 4:
-            print('You won in ', attempt, 'steps')
-            break
-
-
-play_bulls_and_cows()
-
+#
+# import random
+# import string
+#
+#
+# def play_bulls_and_cows():
+#     """
+#     Play game "Bulls and Cows"
+#     """
+#
+#     digits = list(string.digits)
+#     random.shuffle(digits)
+#     random_number = ''.join(digits[:4])
+#     attempt = 0
+#     while True:
+#         hidden_four_digit_num = input("ENTER A FOUR-DIGIT NUMBER: ")
+#         attempt += 1
+#         bulls = 0
+#         cows = 0
+#         for elements in range(4):
+#             if random_number[elements] == hidden_four_digit_num[elements]:
+#                 bulls += 1
+#             elif hidden_four_digit_num[elements] in random_number:
+#                 cows += 1
+#         print(hidden_four_digit_num + ' contain ' + str(bulls) + ' bull and ' +
+#               str(cows) + ' cows')
+#         if bulls == 4:
+#             print('You won in ', attempt, 'steps')
+#             break
+#
+#
+# play_bulls_and_cows()
+#
 
 # Пирамида
 # Мы можем визуализировать художественную пирамиду ASCII с N уровнями,
@@ -58,17 +59,17 @@ play_bulls_and_cows()
 # Необходимо написать программу, которая генерирует такую
 # пирамиду пирамиду со значением N, равным 10
 
-def generate_pyramid(levels):
-    """
-    Print a pyramid with the given number of levels
-    """
-    for i in range(levels):
-        spaces = " " * (levels - i - 1)
-        stars = "*" * (2 * i + 1)
-        print(spaces + stars)
-
-
-generate_pyramid(10)
+# def generate_pyramid(levels):
+#     """
+#     Print a pyramid with the given number of levels
+#     """
+#     for i in range(levels):
+#         spaces = " " * (levels - i - 1)
+#         stars = "*" * (2 * i + 1)
+#         print(spaces + stars)
+#
+#
+# generate_pyramid(10)
 
 
 # Статуи
@@ -97,8 +98,9 @@ def count_missed_statues(statues_list):
 
         return len(missing_statues)
 
-    print('Please provide list data type!')
 
+    print('Please provide list data type!')
+    return False
 
 statues = [6, 2, 3, 8]
 print(count_missed_statues(statues))
