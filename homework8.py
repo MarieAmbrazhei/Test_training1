@@ -98,9 +98,9 @@ def count_missed_statues(statues_list):
 
         return len(missing_statues)
 
-
     print('Please provide list data type!')
     return False
+
 
 statues = [6, 2, 3, 8]
 print(count_missed_statues(statues))
