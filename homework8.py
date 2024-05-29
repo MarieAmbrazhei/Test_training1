@@ -36,7 +36,7 @@ while True:
     print(hidden_four_digit_num + ' contain ' + str(BULLS) + ' bull and ' +
           str(COWS) + ' cows')
     if BULLS == 4:
-        print('You won in ', n, 'steps')
+        print('You won in ', N, 'steps')
         break
 
 
@@ -50,7 +50,7 @@ while True:
 # Необходимо написать программу, которая генерирует такую
 # пирамиду пирамиду со значением N, равным 10
 
-# def generate_pyramid(levels):
+def generate_pyramid(levels):
     for i in range(levels):
         spaces = " " * (levels - i - 1)
         stars = "*" * (2 * i + 1)
