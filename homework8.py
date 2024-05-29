@@ -1,7 +1,6 @@
 """ Homework8: Flow Control. Loops: writing and implementing programs
 in Python """
 
-
 # Быки и коровы
 # В классическом варианте игра рассчитана на двух игроков.
 # Каждый из игроков задумывает и записывает тайное 4-значное число
@@ -39,9 +38,8 @@ def play_bulls_and_cows():
                 bulls += 1
             elif hidden_four_digit_num[elements] in random_number:
                 cows += 1
-        print(hidden_four_digit_num + ' contain ' + str(bulls) + ' bull
-        and ' +
-              str(cows) + ' cows')
+        print(hidden_four_digit_num + ' contain ' + str(bulls) + ' bull'
+              and + str(cows) + ' cows')
         if bulls == 4:
             print('You won in ', attempt, 'steps')
             break
