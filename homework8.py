@@ -39,7 +39,8 @@ in Python """
 #                 bulls += 1
 #             elif hidden_four_digit_num[elements] in random_number:
 #                 cows += 1
-#         print(hidden_four_digit_num + ' contain ' + str(bulls) + ' bull and ' +
+#         print(hidden_four_digit_num + ' contain ' + str(bulls) + ' bull
+#         and ' +
 #               str(cows) + ' cows')
 #         if bulls == 4:
 #             print('You won in ', attempt, 'steps')
