@@ -1,3 +1,6 @@
+""" Homework8: Flow Control. Loops: writing and implementing programs
+in Python """
+
 # Быки и коровы
 # В классическом варианте игра рассчитана на двух игроков.
 # Каждый из игроков задумывает и записывает тайное 4-значное число
@@ -19,22 +22,23 @@ RANDOM_DIGITS = choice(DIGITS[1:10])
 for elements in range(3):
     DIGITS = ''.join(DIGITS .split(RANDOM_DIGITS[elements]))
     RANDOM_DIGITS += choice(DIGITS)
-n = 0
+N = 0
 while True:
     hidden_four_digit_num = input("ENTER A FOUR-DIGIT NUMBER: ")
-    n += 1
-    bulls = 0
-    cows = 0
+    N += 1
+    BULLS = 0
+    COWS = 0
     for elements in range(4):
         if RANDOM_DIGITS[elements] == hidden_four_digit_num[elements]:
-            bulls += 1
+            BULLS += 1
         elif hidden_four_digit_num[elements] in RANDOM_DIGITS:
-            cows += 1
-    print(hidden_four_digit_num + ' contain ' + str(bulls) + ' bull and ' +
-          str(cows) + ' cows')
-    if bulls == 4:
-        print(f'You won in , n, steps')
-    break
+            COWS += 1
+    print(hidden_four_digit_num + ' contain ' + str(BULLS) + ' bull and ' +
+          str(COWS) + ' cows')
+    if BULLS == 4:
+        print('You won in ', n, 'steps')
+        break
+
 
 # Пирамида
 # Мы можем визуализировать художественную пирамиду ASCII с N уровнями,
@@ -46,7 +50,7 @@ while True:
 # Необходимо написать программу, которая генерирует такую
 # пирамиду пирамиду со значением N, равным 10
 
-def generate_pyramid(levels):
+# def generate_pyramid(levels):
     for i in range(levels):
         spaces = " " * (levels - i - 1)
         stars = "*" * (2 * i + 1)
@@ -54,6 +58,7 @@ def generate_pyramid(levels):
 
 
 generate_pyramid(10)
+
 
 # Статуи
 # Вы получили в подарок на день рождения статуи разных размеров, каждая статуя
