@@ -38,10 +38,9 @@ def play_bulls_and_cows():
                 bulls += 1
             elif hidden_four_digit_num[elements] in random_number:
                 cows += 1
-        print(hidden_four_digit_num + ' contain ' + str(bulls) + ' bull'
-              and + str(cows) + ' cows')
+        print(f"{hidden_four_digit_num} contain {bulls} bull and {cows} cows")
         if bulls == 4:
-            print('You won in ', attempt, 'steps')
+            print(f"You won in {attempt} steps")
             break
 
 
