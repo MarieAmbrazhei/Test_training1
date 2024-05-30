@@ -1,6 +1,7 @@
 """ Homework9: Functions writing and implementing programs
 in Python """
 
+
 # Последовательность
 # Дана последовательность целых чисел в виде массива. Определите, можно ли
 # получить строго возрастающую последовательность, удалив из массива не более
@@ -63,7 +64,6 @@ def find_opposite_number(n, first_number):
 
 
 print(find_opposite_number(10, 9))
-
 
 # Validate
 # Ваша задача написать программу, принимающее число - номер кредитной карты
