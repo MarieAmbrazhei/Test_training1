@@ -1,6 +1,42 @@
 """ Homework9: Functions writing and implementing programs
 in Python """
 
+# Validate
+# Ваша задача написать программу, принимающее число - номер кредитной карты
+# (число может быть четным или не четным).
+# И проверяющей может ли такая карта существовать. Предусмотреть защиту от
+# ввода букв, пустой строки и т.д. Примечания Алгоритм Луна.
+
+from functools import reduce
+
+
+def validate_card(card_number):
+    """
+    Validate a credit card number using the Luhn algorithm.
+    """
+    even = []
+    odd = []
+    card_number_reverted = card_number[::-1]
+    for elem in range(len(card_number)):
+        if (elem + 1) % 2 == 0:
+            odd_number = int(card_number_reverted[elem]) * 2
+            if odd_number > 9:
+                odd_number -= 9
+            odd.append(odd_number)
+
+        else:
+            even.append(card_number_reverted[elem])
+
+    result = reduce(lambda x, y: x + y, [*list(map(int, even)),
+                                         *odd])
+    if result % 10 == 0:
+        return True
+    return False
+
+
+print(validate_card('4561261212345464'.replace(' ', '')))
+print(validate_card('4561261212345467'.replace(' ', '')))
+
 
 # Последовательность
 # Дана последовательность целых чисел в виде массива. Определите, можно ли
@@ -64,40 +100,3 @@ def find_opposite_number(n, first_number):
 
 
 print(find_opposite_number(10, 9))
-
-from functools import reduce
-
-
-# Validate
-# Ваша задача написать программу, принимающее число - номер кредитной карты
-# (число может быть четным или не четным).
-# И проверяющей может ли такая карта существовать. Предусмотреть защиту от
-# ввода букв, пустой строки и т.д. Примечания Алгоритм Луна.
-
-
-def validate_card(card_number):
-    """
-    Validate a credit card number using the Luhn algorithm.
-    """
-    even = []
-    odd = []
-    card_number_reverted = card_number[::-1]
-    for elem in range(len(card_number)):
-        if (elem + 1) % 2 == 0:
-            odd_number = int(card_number_reverted[elem]) * 2
-            if odd_number > 9:
-                odd_number -= 9
-            odd.append(odd_number)
-
-        else:
-            even.append(card_number_reverted[elem])
-
-    result = reduce(lambda x, y: x + y, [*list(map(int, even)),
-                                         *odd])
-    if result % 10 == 0:
-        return True
-    return False
-
-
-print(validate_card('4561261212345464'.replace(' ', '')))
-print(validate_card('4561261212345467'.replace(' ', '')))
