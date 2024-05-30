@@ -17,6 +17,7 @@ in Python """
 # последовательность [1, 2]. Альтернативно можно убрать 2, чтобы получить
 # строго возрастающую последовательность [1, 3].
 
+
 def can_be_ascending_by_removing_one(seq_int):
     """
     Get a strictly ascending sequence by removing only one element.
@@ -49,8 +50,8 @@ print(can_be_ascending_by_removing_one([40, 50, 60, 10, 20, 30]))
 # внимание, что 0 и n-1 тоже являются соседними).
 # Учитывая n и first_number, найдите число, которое написано в радиально
 # противоположной позиции от first_number.
-# Примеры
-Для n = 10 и first_number = 2 вывод должен быть (n, first_number) = 7.
+# Для n = 10 и first_number = 2 вывод должен быть (n, first_number) = 7.
+
 
 def find_opposite_number(n, first_number):
     """
@@ -77,7 +78,6 @@ def validate_card(card_number):
     """
     Validate a credit card number using the Luhn algorithm.
     """
-
     even = []
     odd = []
     card_number_reverted = card_number[::-1]
