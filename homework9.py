@@ -75,7 +75,6 @@ print(find_opposite_number(10, 9))
 
 from functools import reduce
 
-
 def validate_card(card_number):
     """
     Validate a credit card number using the Luhn algorithm.
