@@ -65,14 +65,14 @@ def find_opposite_number(n, first_number):
 
 print(find_opposite_number(10, 9))
 
+from functools import reduce
+
+
 # Validate
 # Ваша задача написать программу, принимающее число - номер кредитной карты
 # (число может быть четным или не четным).
 # И проверяющей может ли такая карта существовать. Предусмотреть защиту от
 # ввода букв, пустой строки и т.д. Примечания Алгоритм Луна.
-
-
-from functools import reduce
 
 
 def validate_card(card_number):
