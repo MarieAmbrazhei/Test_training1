@@ -10,10 +10,12 @@ in Python """
 from functools import reduce
 
 
-def validate_card(card_number):
+def validate_card(card_number: str) -> bool:
     """
     Validate a credit card number using the Luhn algorithm.
     """
+    if isinstance(card_number, str):
+        card_number = card_number.replace(' ', '').strip()
     even = []
     odd = []
     card_number_reverted = card_number[::-1]
@@ -25,17 +27,16 @@ def validate_card(card_number):
             odd.append(odd_number)
 
         else:
-            even.append(card_number_reverted[elem])
+            even.append(int(card_number_reverted[elem]))
 
-    result = reduce(lambda x, y: x + y, [*list(map(int, even)),
-                                         *odd])
-    if result % 10 == 0:
+    validation_sum = reduce(lambda x, y: x + y, even + odd)
+    if validation_sum % 10 == 0:
         return True
     return False
 
 
-print(validate_card('4561261212345464'.replace(' ', '')))
-print(validate_card('4561261212345467'.replace(' ', '')))
+print(validate_card('4561261212345464'))
+print(validate_card('4561261212345467'))
 
 
 # Последовательность
@@ -55,10 +56,13 @@ print(validate_card('4561261212345467'.replace(' ', '')))
 # строго возрастающую последовательность [1, 3].
 
 
-def can_be_ascending_by_removing_one(seq_int):
+def can_be_ascending_by_removing_one(seq_int: list) -> bool:
     """
     Get a strictly ascending sequence by removing only one element.
     """
+    if len(seq_int) - len(set(seq_int)) > 1:
+        print('Duplicate elements found.')
+        return False
     count = 0
 
     for i in range(len(seq_int) - 1):
@@ -90,7 +94,7 @@ print(can_be_ascending_by_removing_one([40, 50, 60, 10, 20, 30]))
 # Для n = 10 и first_number = 2 вывод должен быть (n, first_number) = 7.
 
 
-def find_opposite_number(n, first_number):
+def find_opposite_number(n, first_number: int) -> int:
     """
     Find the the radially opposite number.
     """
