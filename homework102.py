@@ -1,4 +1,4 @@
-"""Homework102:Functions. Writing and implementing programs."""
+"""Homework:Functions. Writing and implementing programs."""
 
 
 # Строки с заданным символом
@@ -6,7 +6,7 @@
 # "#" и если этот символ найден - удаляла предыдущий символ из строки. Ваша
 # задача обработать строки с "#" символом
 
-def remove_excessive_symbols(str_with_hash: str) -> str:
+def remove_excessive_symbols(str_with_hash):
     """
     Removes the character preceding each '#' in the string.
     """
@@ -37,7 +37,7 @@ assert remove_excessive_symbols("") == ""
 # свечей вы можете сжечь, если предположить, что вы создадите
 # новые свечи, как только у вас останется достаточно остатков?
 
-def solution(candles_number: int, make_new: int) -> int:
+def solution(candles_number, make_new):
     """
     Calculates total candles burned, including those made from remainders.
     """
@@ -65,7 +65,7 @@ assert solution(2, 3) == 2
 # На вход подается строка, например, "cccbba" результат работы
 # программы - строка “c3b2a"
 
-def count_letters(given_string: str) -> str:
+def count_letters(given_string):
     """
      Returns a string with
      unique characters and their quantity.
@@ -73,7 +73,7 @@ def count_letters(given_string: str) -> str:
     result_string = ''
     letters = {}
 
-    def count_and_remove(cut_string: str) -> [str, bool]:
+    def count_and_remove(cut_string):
         nonlocal result_string, letters
         for idx, letter in enumerate(cut_string):
             if letter not in letters:
