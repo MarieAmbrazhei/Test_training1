@@ -1,5 +1,3 @@
-from typing import Union
-
 """Homework102:Functions. Writing and implementing programs."""
 
 
@@ -75,7 +73,7 @@ def count_letters(given_string: str) -> str:
     result_string = ''
     letters = {}
 
-    def count_and_remove(cut_string: str) -> Union[bool, str]:
+    def count_and_remove(cut_string: str) -> str:
         nonlocal result_string, letters
         for idx, letter in enumerate(cut_string):
             if letter not in letters:
@@ -90,7 +88,7 @@ def count_letters(given_string: str) -> str:
                 cut_string = cut_string[idx + 1:]
                 letters = {}
                 return count_and_remove(cut_string)
-        # to pass pylint R0801
+        # to pass pylint R1710
         return ''
 
     return count_and_remove(given_string)
