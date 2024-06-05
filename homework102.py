@@ -1,4 +1,4 @@
-"""Homework10:Functions. Writing and implementing programs."""
+"""Homework102:Functions. Writing and implementing programs."""
 
 
 # Строки с заданным символом
