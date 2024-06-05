@@ -99,3 +99,4 @@ assert count_letters('abeehhhhhccced') == "abe2h5c3ed"
 assert count_letters('aaabbceedd') == "a3b2ce2d2"
 assert count_letters('abcde') == "abcde"
 assert count_letters('aaabbdefffff') == "a3b2def5"
+
