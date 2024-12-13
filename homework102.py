@@ -1,4 +1,4 @@
-"""Homework10:Functions. Writing and implementing programs."""
+"""Homework102:Functions. Writing and implementing programs."""
 
 
 # Строки с заданным символом
@@ -14,11 +14,9 @@ def remove_excessive_symbols(str_with_hash: str) -> str:
         try:
             index = str_with_hash.index('#')
             if index > 0:
-
                 str_with_hash = str_with_hash[:index - 1] + str_with_hash[
                                                             index + 1:]
             else:
-
                 str_with_hash = str_with_hash[index + 1:]
         except ValueError:
             break
@@ -39,7 +37,7 @@ assert remove_excessive_symbols("") == ""
 # свечей вы можете сжечь, если предположить, что вы создадите
 # новые свечи, как только у вас останется достаточно остатков?
 
-def solution(candles_number, make_new):
+def solution(candles_number: int, make_new: int) -> int:
     """
     Calculates total candles burned, including those made from remainders.
     """
@@ -67,7 +65,7 @@ assert solution(2, 3) == 2
 # На вход подается строка, например, "cccbba" результат работы
 # программы - строка “c3b2a"
 
-def count_letters(given_string):
+def count_letters(given_string: str) -> str:
     """
      Returns a string with
      unique characters and their quantity.
@@ -75,7 +73,7 @@ def count_letters(given_string):
     result_string = ''
     letters = {}
 
-    def count_and_remove(cut_string):
+    def count_and_remove(cut_string: str) -> str:
         nonlocal result_string, letters
         for idx, letter in enumerate(cut_string):
             if letter not in letters:
@@ -90,6 +88,8 @@ def count_letters(given_string):
                 cut_string = cut_string[idx + 1:]
                 letters = {}
                 return count_and_remove(cut_string)
+        # to pass pylint R1710
+        return ''
 
     return count_and_remove(given_string)
 
